@@ -1,0 +1,21 @@
+/* Star selector, changes everything on the page */
+* {
+  border: 1px solid lightgrey;
+}
+/* Descendant Selector, in this example, this selects all anchor tags inside of an li */
+li a {
+  color: red;
+}
+/* Adjacent Selector, in this example this selects all ul that are after an h4, sibling elements*/
+h4 + ul {
+  border: 4px solid red;
+}
+/* Attribute Selector in this example is selecting all a tags with the attribute equal to http://www.google.com*/
+/* input[type="text"]  just another example of an input wiht type equals text is selected*/
+a[href="http://www.google.com"]{
+  background: blue;
+}
+/* nth of type, in this example its selecting the a ul, and its the third ul of it type*/
+ul:nth-of-type(3){
+  background: purple;
+}
