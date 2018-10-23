@@ -1,0 +1,22 @@
+
+h1 {
+  color:#324b96;
+  font-family: 'Niramit', sans-serif;
+  font-size: 75px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Niramit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+/* Between the content(element)and the border is padding, between the border and everything else is margin  */
+.box {
+  border: 2px solid blue;
+  width: 50%;
+  padding: 10px;
+  margin: 50px;
+}
+/* Percentages work in relation to the parent element, so in this case the parent of the .box class would be the body */
