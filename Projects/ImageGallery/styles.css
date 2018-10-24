@@ -5,7 +5,7 @@ img {
   float: left;
   /* This margin was found by using 30% that 3 images are taking up, so we have 10 percent left, there 2 sides to each image we need to divide the space between, so 6 total and 10/6 is 1.66 */
   margin: 1.5%;
-  height: 170px;
+  height: 260px;
 }
 p {
   font-family: 'Raleway', sans-serif;
