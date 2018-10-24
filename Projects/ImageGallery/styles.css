@@ -1,0 +1,20 @@
+/* By default img tags by themselves create a little space between them, where using the float property to clear that space, and add our own in so we control it */
+img {
+  /* remember percent is 30% of the parent element which in this case is the body */
+  width: 22%; 
+  float: left;
+  /* This margin was found by using 30% that 3 images are taking up, so we have 10 percent left, there 2 sides to each image we need to divide the space between, so 6 total and 10/6 is 1.66 */
+  margin: 1.5%;
+  height: 170px;
+}
+p {
+  font-family: 'Raleway', sans-serif;
+  /* This margin is the same used as for the images, but were just worried about 1 side, thats why we use margin left to push over the text */
+  margin-left: 1.5%;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-bottom: 2px solid #f1f1f1;
+  width: 22%;
+  padding-bottom: 20px;
+}
