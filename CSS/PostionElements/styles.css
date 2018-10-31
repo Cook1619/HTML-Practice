@@ -1,0 +1,19 @@
+#one {
+  width: 100%;
+  height: 30%;
+  background-color: red;
+}
+#two {
+  width: 100%;
+  height: 20%;
+  background-color: green;
+}
+
+#three {
+  width: 50%;
+  height: 15%;
+  background-color:blue;
+  position: absolute;
+  top: 22.5%;
+  left: 27%;
+}
