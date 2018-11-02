@@ -1,11 +1,58 @@
+/* The main thing with position absolute is it takes elements out of the flow of the document */
+/* The child is relative to the body of the page until you give the parent the relative position, then the child will stay inside the parent and not flow outside of it. */
+/* Absolute always looks for the next parent element to have a position relative, and if it doesn't find one the default will be the body */
 .parent {
   background: aquamarine;
-  height: 75vh;
-  width: 75vh;
-  padding: 1em;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
-.child {
+.child1 {
   background: red;
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+}
+.child2 {
+  background: blue;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+}
+.child3 {
+  background: yellow;
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 15%;
+  right: 15%;
+}
+.child4 {
+  background: cyan;
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+}
+.child5 {
+  background:purple;
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 25%;
+  right: 25%;
+}
+h1 {
+  font-size: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 41%;
+  bottom: 41%;
+  left: 41%;
+  right: 41%;
 }
