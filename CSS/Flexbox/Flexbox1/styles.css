@@ -1,0 +1,33 @@
+.box {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box div {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+}
+
+.box2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.box2 div {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+}
+.box3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.box3 div {
+  height: 150px;
+  width: 150px;
+  background-color: aquamarine;
+}
