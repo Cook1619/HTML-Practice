@@ -1,0 +1,13 @@
+/* Absolute positioning means we can position absolutley anywhere on a webpage relative to the parent element, which if nothing explicitly is defined positive relative, it treats the body of the document as relative. */
+.banner {
+  position: relative;
+  top: 40vh;
+  left: 42vw;
+}
+.banner h1 {
+  position: absolute;
+  color: yellow;
+  left:60px;
+  margin: 0;
+  top: 0;
+}
