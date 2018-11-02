@@ -1,0 +1,37 @@
+/* When giving an element a position of relative, it stays in the normal document flow, you can offset it visually by giving it top, bottom, left, right values */
+/* This demonstration shows position relative nicely in that fact shows that if you keep nesting the divs inside of eachother and giving it the same top and left values the position are relative to the container there in and move in a linear fashion. Also the purple box show that elements in the same level with the same top and left value will stack like normal block level elements and change upon where there created in the document flow. */
+body {
+  background-color: grey;
+}
+.one {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: blue;
+  top: 100px;
+  left: 300px;
+}
+.two {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: green;
+  top: 100px;
+  left: 300px;
+}
+.three {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  top: 100px;
+  left: 300px;
+}
+.four {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: purple;
+  top: 100px;
+  left: 300px;
+}
