@@ -18,4 +18,5 @@ let color1 =  colors.pop();//console.log(color1) == 'green'
 let fruits = ['apple', 'orange', 'lemon', 'blueberry', 'mango'];
 let citrus = fruits.slice(1,3);
 console.log(citrus)//returns an array with [orange, lemon]
+//Take note were not mutuating the original array, it still has all the values it did before the slice
 //If you want to copy the whole array just don't give it arguements and store it to another variable
