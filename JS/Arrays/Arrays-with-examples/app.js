@@ -20,3 +20,17 @@ let citrus = fruits.slice(1,3);
 console.log(citrus)//returns an array with [orange, lemon]
 //Take note were not mutuating the original array, it still has all the values it did before the slice
 //If you want to copy the whole array just don't give it arguements and store it to another variable
+
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
+numbers.forEach((number) => {
+  if(number % 2 === 0){
+    console.log(number);
+  }
+})
+
+for(var i = 0; i < numbers.length; i++){
+  if(numbers[i] % 3 === 0){
+    console.log(numbers[i]);
+  }
+}
