@@ -12,27 +12,13 @@
   margin: 0 auto;
   width: 302px;
 }
-.top-left {
+.top {
   border-bottom: 1px solid black;
 }
-.top-middle {
-  border-bottom: 1px solid black;
+.bottom {
+  border-top: 1px solid black;
+}
+.center {
   border-left: 1px solid black;
-  border-right:1px solid black;
-}
-.top-right {
-  border-bottom: 1px solid black;
-}
-.center-left {
-  border-bottom: 1px solid black;
-  border-right:1px solid black;
-}
-.center-right {
-  border-bottom: 1px solid black;
-  border-left:1px solid black;
-}
-.bottom-middle {
-    border-top: 1px solid black;
-    border-right:1px solid black;
-    border-left: 1px solid black;
+  border-right: 1px solid black;
 }
