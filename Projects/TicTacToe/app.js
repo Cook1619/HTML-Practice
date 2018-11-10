@@ -1,7 +1,6 @@
 let cells = document.querySelectorAll('.square');
-let x = null;
-let o = null;
-
+let player1 = null;
+let player2 =  null;
 
 cellClicked = e => {
     console.log(e.target);
