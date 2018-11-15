@@ -21,17 +21,26 @@ const player2 = {
 }
 //Creaating a variable I can flip back and forth to keep track of whos turn it is
 let isPlayer1Turn = true;
-//
+
 cellClicked = e => {
     //targets the cell clicked and pending on truthy or falsey it will create an x or o
     e.target.innerHTML = isPlayer1Turn ? player1.symbol : player2.symbol;
+    console.log(player1.symbol);
     //checks if game ended
     if(checkGameEnded()){
         //checks if there is a winner
         let winner = checkWinner();
         if (winner){
             //alert the winner 
-            alert(`The winner is ${winner}`);
+            // alert(`The winner is ${winner}`);
+            const h5 = document.createElement('h5');
+            const h3Text = document.createTextNode(`The winner is ${winner}`);
+            let h1 = document.querySelector('h1');
+            h5.appendChild(h3Text);
+            h1.appendChild(h5);
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 2000);
         }
     }
     //flips player turn 

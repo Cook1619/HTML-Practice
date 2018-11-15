@@ -13,12 +13,12 @@
   width: 302px;
 }
 .top {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #4682B4;
 }
 .bottom {
-  border-top: 1px solid black;
+  border-top: 1px solid #4682B4;
 }
 .center {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid #4682B4;
+  border-right: 1px solid #4682B4;
 }
