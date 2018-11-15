@@ -25,7 +25,7 @@ let isPlayer1Turn = true;
 cellClicked = e => {
     //targets the cell clicked and pending on truthy or falsey it will create an x or o
     e.target.innerHTML = isPlayer1Turn ? player1.symbol : player2.symbol;
-    console.log(player1.symbol);
+    let draw = "Draw";
     //checks if game ended
     if(checkGameEnded()){
         //checks if there is a winner
@@ -36,7 +36,7 @@ cellClicked = e => {
             createHeading("The winner is ", winner);
         }
         else if(!winner){
-            createHeading("Game is a Draw!", null)
+            createHeading("Game is a ", draw);
         }
     }
     //flips player turn 
