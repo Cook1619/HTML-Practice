@@ -12,31 +12,38 @@ const winningCombos = [
     [3, 6, 9],
     [3, 5, 7]
 ]
-
-//Run this code when a cell is clicked
+//Setting an X or an O per player
 const player1 = {
     symbol: "X"
 }
 const player2 = {
     symbol: "O"
 }
+//Creaating a variable I can flip back and forth to keep track of whos turn it is
 let isPlayer1Turn = true;
-
+//
 cellClicked = e => {
+    //targets the cell clicked and pending on truthy or falsey it will create an x or o
     e.target.innerHTML = isPlayer1Turn ? player1.symbol : player2.symbol;
+    //checks if game ended
     if(checkGameEnded()){
+        //checks if there is a winner
         let winner = checkWinner();
         if (winner){
+            //alert the winner 
             alert(`The winner is ${winner}`);
         }
     }
+    //flips player turn 
     isPlayer1Turn = !isPlayer1Turn;
 }
+//checks if all the cells are filled with a character
 checkGameEnded = () => {
     let winner = checkWinner()
     if(winner){
         return true;
     }
+    //loops through all the cells checking if there empty
     for (let element of cells) {
         if (element.innerHTML === "") {
             return false;
@@ -65,8 +72,3 @@ cells.forEach((cell) => {
     cell.addEventListener('click', cellClicked);
 })
 
-//Know whos turn it is
-
-//Keep track if there is a winner
-
-//Reset game if winner or draw
