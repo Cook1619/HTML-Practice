@@ -42,11 +42,22 @@ cellClicked = e => {
                 window.location.reload(true);
             }, 2000);
         }
+        else if(!winner){
+            const h5 = document.createElement('h5');
+            const h3Text = document.createTextNode(`DRAW!!!`);
+            let h1 = document.querySelector('h1');
+            h5.appendChild(h3Text);
+            h1.appendChild(h5);
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 2000);
+        }
     }
     //flips player turn 
     isPlayer1Turn = !isPlayer1Turn;
 }
 //checks if all the cells are filled with a character
+
 checkGameEnded = () => {
     let winner = checkWinner()
     if(winner){
