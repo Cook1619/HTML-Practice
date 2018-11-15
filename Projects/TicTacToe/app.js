@@ -32,7 +32,7 @@ cellClicked = e => {
         let winner = checkWinner();
         if (winner){
             //alert the winner 
-            // alert(`The winner is ${winner}`);
+            // Create an h5 element stating who the winner is
             const h5 = document.createElement('h5');
             const h3Text = document.createTextNode(`The winner is ${winner}`);
             let h1 = document.querySelector('h1');

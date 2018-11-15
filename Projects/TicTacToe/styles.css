@@ -22,3 +22,7 @@
   border-left: 1px solid #4682B4;
   border-right: 1px solid #4682B4;
 }
+body {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #044a57;
+}
