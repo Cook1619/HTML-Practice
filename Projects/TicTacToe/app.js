@@ -33,24 +33,10 @@ cellClicked = e => {
         if (winner){
             //alert the winner 
             // Create an h5 element stating who the winner is
-            const h5 = document.createElement('h5');
-            const h3Text = document.createTextNode(`The winner is ${winner}`);
-            let h1 = document.querySelector('h1');
-            h5.appendChild(h3Text);
-            h1.appendChild(h5);
-            setTimeout(function(){
-                window.location.reload(true);
-            }, 2000);
+            createHeading("The winner is ", winner);
         }
         else if(!winner){
-            const h5 = document.createElement('h5');
-            const h3Text = document.createTextNode(`DRAW!!!`);
-            let h1 = document.querySelector('h1');
-            h5.appendChild(h3Text);
-            h1.appendChild(h5);
-            setTimeout(function(){
-                window.location.reload(true);
-            }, 2000);
+            createHeading("Game is a Draw!", null)
         }
     }
     //flips player turn 
@@ -86,6 +72,17 @@ checkWinner = () => {
             return playerSymbol;
         }
     }
+}
+
+createHeading = (str, gameStatus)  => {
+    const h5 = document.createElement('h5');
+            const h3Text = document.createTextNode(`${str}${gameStatus}`);
+            let h1 = document.querySelector('h1');
+            h5.appendChild(h3Text);
+            h1.appendChild(h5);
+            setTimeout(function(){
+                window.location.reload(true);
+            }, 2000);
 }
 //Event listener, listening for clicks
 cells.forEach((cell) => {
