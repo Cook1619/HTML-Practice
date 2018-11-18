@@ -5,19 +5,23 @@ let turn = 0;
 let moveCount = 0;
 let players = ['O', 'X']
 
+//Initial message saying whos turn it is
 msg.textContent = `${markers[turn]}'s turn`;
 resetGame = () => {
-    setTimeout(function(){
+    setTimeout(function () {
         window.location.reload(true);
     }, 2000);
 }
+//Checks if there is a winner right away and displays an appropriate message, will reset game as soon as its a winner or draw
 rowClicked = (e) => {
     if (checkWin('X') || checkWin('O') == true) {
         msg.textContent = `Congratulations ${players[turn]}! You are the winner!`;
         resetGame();
+        //checks in the tile as already been clicked, if it has display appropriate message
     } else if (!(e.target.textContent == '')) {
         return msg.textContent = `${markers[turn]} that operation is not allowed`;
-    } else e.target.textContent = markers[turn]; ++moveCount;
+    } else e.target.textContent = markers[turn];
+    ++moveCount;
     msg.textContent = `${markers[turn]}'s turn`;
     if (turn == 0) {
         turn = 1;
@@ -27,15 +31,15 @@ rowClicked = (e) => {
         msg.textContent = `Congratulations ${players[turn]}! You are the winner!`
         resetGame();
     } else if (moveCount == 9 && checkWin('X', 'O') == false) {
-      msg.textContent = 'Draw!'
-      resetGame();
+        msg.textContent = 'Draw!'
+        resetGame();
     }
 }
-
+//Has all tiles selected and listens for a click event
 rows.forEach(function (row) {
     row.addEventListener('click', rowClicked);
 });
-
+//Holds winning results and check if the ids clicked are any of these combinations 
 checkWin = (move) => {
     var result = false;
     if (checkRow(1, 2, 3, move) ||
@@ -49,14 +53,14 @@ checkWin = (move) => {
         result = true;
     } return result;
 }
-
+//Flips result based on which tiles are clicked on
 checkRow = (a, b, c, move) => {
     var result = false;
     if (getTile(a) == move && getTile(b) == move && getTile(c) == move) {
         result = true
     } return result
 }
-
+//Check which tile is clicked on based on the id
 getTile = number => {
     return document.getElementById('t' + number).textContent
 }
