@@ -1,91 +1,62 @@
-//Selects all the squares in the form of an array to interate through
-const cells = document.querySelectorAll('.square');
+const rows = document.querySelectorAll('.row');
+let msg = document.getElementById('message');
+let markers = ['X', 'O'];
+let turn = 0;
+let moveCount = 0;
+let players = ['O', 'X']
 
-//Winning combinations that end the game
-const winningCombos = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [1, 5, 9],
-    [1, 4, 7],
-    [2, 5, 8],
-    [3, 6, 9],
-    [3, 5, 7]
-]
-//Setting an X or an O per player
-const player1 = {
-    symbol: "X"
+msg.textContent = `${markers[turn]}'s turn`;
+resetGame = () => {
+    setTimeout(function(){
+        window.location.reload(true);
+    }, 2000);
 }
-const player2 = {
-    symbol: "O"
-}
-//Creaating a variable I can flip back and forth to keep track of whos turn it is
-let isPlayer1Turn = true;
-
-cellClicked = e => {
-    //targets the cell clicked and pending on truthy or falsey it will create an x or o
-    e.target.innerHTML = isPlayer1Turn ? player1.symbol : player2.symbol;
-    let draw = "Draw";
-    //checks if game ended
-    if(checkGameEnded()){
-        //checks if there is a winner
-        let winner = checkWinner();
-        if (winner){
-            //alert the winner 
-            // Create an h5 element stating who the winner is
-            createHeading("The winner is ", winner);
-        }
-        else if(!winner){
-            createHeading("Game is a ", draw);
-        }
-    }
-    //flips player turn 
-    isPlayer1Turn = !isPlayer1Turn;
-}
-//checks if all the cells are filled with a character
-
-checkGameEnded = () => {
-    let winner = checkWinner()
-    if(winner){
-        return true;
-    }
-    //loops through all the cells checking if there empty
-    for (let element of cells) {
-        if (element.innerHTML === "") {
-            return false;
-        }
-    }
-    return true;
-}
-
-checkWinner = () => {
-    for (let combo of winningCombos) {
-        let playerSymbol = document.getElementById(combo[0]).innerHTML;
-        let foundWinner = true;
-        for (let id of combo) {
-            let symbol = document.getElementById(id).innerHTML;
-            if (playerSymbol !== symbol) {
-                foundWinner = false;
-            }
-        }
-        if (foundWinner) {
-            return playerSymbol;
-        }
+rowClicked = (e) => {
+    if (checkWin('X') || checkWin('O') == true) {
+        msg.textContent = `Congratulations ${players[turn]}! You are the winner!`;
+        resetGame();
+    } else if (!(e.target.textContent == '')) {
+        return msg.textContent = `${markers[turn]} that operation is not allowed`;
+    } else e.target.textContent = markers[turn]; ++moveCount;
+    msg.textContent = `${markers[turn]}'s turn`;
+    if (turn == 0) {
+        turn = 1;
+    } else turn = 0;
+    msg.textContent = `${markers[turn]}'s turn`;
+    if (checkWin('X') || checkWin('O') == true) {
+        msg.textContent = `Congratulations ${players[turn]}! You are the winner!`
+        resetGame();
+    } else if (moveCount == 9 && checkWin('X', 'O') == false) {
+      msg.textContent = 'Draw!'
+      resetGame();
     }
 }
 
-createHeading = (str, gameStatus)  => {
-    const h5 = document.createElement('h5');
-            const h3Text = document.createTextNode(`${str}${gameStatus}`);
-            let h1 = document.querySelector('h1');
-            h5.appendChild(h3Text);
-            h1.appendChild(h5);
-            setTimeout(function(){
-                window.location.reload(true);
-            }, 2000);
-}
-//Event listener, listening for clicks
-cells.forEach((cell) => {
-    cell.addEventListener('click', cellClicked);
-})
+rows.forEach(function (row) {
+    row.addEventListener('click', rowClicked);
+});
 
+checkWin = (move) => {
+    var result = false;
+    if (checkRow(1, 2, 3, move) ||
+        checkRow(4, 5, 6, move) ||
+        checkRow(7, 8, 9, move) ||
+        checkRow(1, 4, 7, move) ||
+        checkRow(2, 5, 8, move) ||
+        checkRow(3, 6, 9, move) ||
+        checkRow(1, 5, 9, move) ||
+        checkRow(3, 5, 7, move)) {
+        result = true;
+    } return result;
+}
+
+checkRow = (a, b, c, move) => {
+    var result = false;
+    if (getTile(a) == move && getTile(b) == move && getTile(c) == move) {
+        result = true
+    } return result
+}
+
+getTile = number => {
+    return document.getElementById('t' + number).textContent
+}

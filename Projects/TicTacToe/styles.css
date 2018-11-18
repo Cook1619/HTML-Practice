@@ -1,28 +1,53 @@
-#board {
-  padding: 3em;
-  text-align: center;
-}
-.row div {
-  float: left;
-  height: 100px;
-  width: 100px;
-}
-.row {
-  clear: both;
-  margin: 0 auto;
-  width: 302px;
-}
-.top {
-  border-bottom: 1px solid #4682B4;
-}
-.bottom {
-  border-top: 1px solid #4682B4;
-}
-.center {
-  border-left: 1px solid #4682B4;
-  border-right: 1px solid #4682B4;
-}
 body {
-  font-family: 'Gloria Hallelujah', cursive;
-  color: #044a57;
+    text-align: center;
+    user-select: none;
+}
+
+.message {
+    color: white;
+}
+
+.board {
+    padding-top: 3em;
+}
+
+h1 {
+    text-align: center
+}
+
+.row > div {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.row::after {
+    clear: left;
+}
+
+.row {
+    margin: 0 auto;
+    width: 302px;
+    text-align: center;
+    font-size: 5em;
+}
+
+.top {
+    border-bottom: 1px solid #4682B4;
+    cursor: pointer;
+}
+
+.right {
+    border-left: 1px solid #4682B4;
+    cursor: pointer;
+}
+
+.bottom {
+    border-top: 1px solid #4682B4;
+    cursor: pointer;
+}
+
+.left {
+    border-right: 1px solid #4682B4;
+    cursor: pointer;
 }

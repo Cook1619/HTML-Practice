@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div id="board">
-    <h1>Tic Tac Toe</h1>
-    <div class="row">
-      <div class="top left square" id="1"></div>
-      <div class="top center square" id="2"></div>
-      <div class="top right square" id="3"></div>
+    <div id="board">
+        <h1 id="game">Tic Tac Toe</h1>
+        <h2 id="message"></h2>
+        <div class="row">
+            <div class="top left" id='t1'></div>
+            <div class="top middle" id='t2'></div>
+            <div class="top right" id='t3'></div>    
+        </div>
+        <div class="row">
+            <div class="middle left" id='t4'></div>
+            <div class="center" id='t5'></div>
+            <div class="middle right" id='t6'></div>
+        </div>
+        <div class="row">
+            <div class="bottom left" id='t7'></div>
+            <div class="bottom middle" id='t8'></div>
+            <div class="bottom right" id='t9'></div>
+        </div>
     </div>
-    <div class="row">
-      <div class="middle left square" id="4"></div>
-      <div class="center square" id="5"></div>
-      <div class="middle right square" id="6"></div>
-    </div>
-    <div class="row">
-      <div class="bottom left square" id="7"></div>
-      <div class="bottom center square" id="8"></div>
-      <div class="bottom right square" id="9"></div>
-    </div>
-  </div>
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>
