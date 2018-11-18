@@ -39,7 +39,7 @@ rowClicked = (e) => {
 rows.forEach(function (row) {
     row.addEventListener('click', rowClicked);
 });
-//Holds winning results and check if the ids clicked are any of these combinations 
+//tells checkrow what row cobinations should return true
 checkWin = (move) => {
     var result = false;
     if (checkRow(1, 2, 3, move) ||
@@ -53,14 +53,14 @@ checkWin = (move) => {
         result = true;
     } return result;
 }
-//Flips result based on which tiles are clicked on
+//uses gettTile to see the tiles as a row
 checkRow = (a, b, c, move) => {
     var result = false;
     if (getTile(a) == move && getTile(b) == move && getTile(c) == move) {
         result = true
     } return result
 }
-//Check which tile is clicked on based on the id
+//Grabs element by the id and checks what text is in the div
 getTile = number => {
     return document.getElementById('t' + number).textContent
 }
