@@ -7,6 +7,7 @@ let players = ['O', 'X']
 
 //Initial message saying whos turn it is
 msg.textContent = `${markers[turn]}'s turn`;
+//Reset game functions reloads the page after a game is complete
 resetGame = () => {
     setTimeout(function () {
         window.location.reload(true);
