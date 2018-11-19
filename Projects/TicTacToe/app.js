@@ -14,11 +14,8 @@ resetGame = () => {
 }
 //Checks if there is a winner right away and displays an appropriate message, will reset game as soon as its a winner or draw
 rowClicked = (e) => {
-    if (checkWin('X') || checkWin('O') == true) {
-        msg.textContent = `Congratulations ${players[turn]}! You are the winner!`;
-        resetGame();
         //checks in the tile as already been clicked, if it has display appropriate message
-    } else if (!(e.target.textContent == '')) {
+     if (!(e.target.textContent == '')) {
         return msg.textContent = `${markers[turn]} that operation is not allowed`;
     } else e.target.textContent = markers[turn];
     ++moveCount;
@@ -27,7 +24,7 @@ rowClicked = (e) => {
         turn = 1;
     } else turn = 0;
     msg.textContent = `${markers[turn]}'s turn`;
-    if (checkWin('X') || checkWin('O') == true) {
+    if (checkWin('X') || checkWin('O')) {
         msg.textContent = `Congratulations ${players[turn]}! You are the winner!`
         resetGame();
     } else if (moveCount == 9 && checkWin('X', 'O') == false) {
@@ -36,11 +33,11 @@ rowClicked = (e) => {
     }
 }
 //Has all tiles selected and listens for a click event
-rows.forEach(function (row) {
+rows.forEach( row => {
     row.addEventListener('click', rowClicked);
 });
 //tells checkrow what row cobinations should return true
-checkWin = (move) => {
+checkWin = move => {
     var result = false;
     if (checkRow(1, 2, 3, move) ||
         checkRow(4, 5, 6, move) ||
