@@ -8,13 +8,13 @@ let players = ['O', 'X']
 //Initial message saying whos turn it is
 msg.textContent = `${markers[turn]}'s turn`;
 //Reset game functions reloads the page after a game is complete
-resetGame = () => {
+const resetGame = () => {
     setTimeout(function () {
         window.location.reload(true);
     }, 2000);
 }
 //Checks if there is a winner right away and displays an appropriate message, will reset game as soon as its a winner or draw
-rowClicked = (e) => {
+const rowClicked = (e) => {
         //checks in the tile as already been clicked, if it has display appropriate message
      if (!(e.target.textContent == '')) {
         return msg.textContent = `${markers[turn]} that operation is not allowed`;
@@ -38,7 +38,7 @@ rows.forEach( row => {
     row.addEventListener('click', rowClicked);
 });
 //tells checkrow what row cobinations should return true
-checkWin = move => {
+const checkWin = move => {
     var result = false;
     if (checkRow(1, 2, 3, move) ||
         checkRow(4, 5, 6, move) ||
@@ -52,13 +52,10 @@ checkWin = move => {
     } return result;
 }
 //uses gettTile to see the tiles as a row
-checkRow = (a, b, c, move) => {
-    var result = false;
-    if (getTile(a) == move && getTile(b) == move && getTile(c) == move) {
-        result = true
-    } return result
+const checkRow = (a, b, c, move) => {
+    return getTile(a) == move && getTile(b) == move && getTile(c) == move
 }
 //Grabs element by the id and checks what text is in the div
-getTile = number => {
+const getTile = number => {
     return document.getElementById('t' + number).textContent
 }
