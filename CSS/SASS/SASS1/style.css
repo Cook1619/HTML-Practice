@@ -13,6 +13,19 @@ body article {
   border-radius: 10px;
 }
 
+.error, .success {
+  border: 2px solid green;
+  padding: 20px;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
 footer {
   background: #f37176;
 }

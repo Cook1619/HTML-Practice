@@ -7,3 +7,14 @@ body
         background: $primary
         border: 1px solid $accent
         +border-radius(10px)
+
+The percentage denotes that it is an extendible class 
+%message
+    border: 2px solid green
+    padding: 20px
+.success
+    @extend %message
+    background: green
+.error
+    @extend %message
+    background: red
