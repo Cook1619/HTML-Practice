@@ -1,0 +1,16 @@
+body {
+  background: #f37176;
+  color: #84ddff;
+}
+body div {
+  background: #f37176;
+}
+body article {
+  background: #f37176;
+  border: 1px solid #84ddff;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

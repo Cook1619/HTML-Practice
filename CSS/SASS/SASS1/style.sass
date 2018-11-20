@@ -1,0 +1,17 @@
+$primary: #f37176
+$accent: #84ddff
+
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -ms-border-radius: $radius
+    border-radius: $radius
+
+body
+    background: $primary
+    color: $accent
+    div
+        background: $primary
+    article
+        background: $primary
+        border: 1px solid $accent
+        +border-radius(10px)
