@@ -2,6 +2,26 @@ body {
   font-family: "Montserrat";
 }
 
+h3 {
+  font-family: "Montserrat-Bold";
+}
+
+h2 {
+  font-family: "Montserrat-Bold";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+p {
+  color: #8f8f8f;
+}
+
+h1 {
+  font-family: "Montserrat-Black";
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
 #features {
   padding: 7% 15%;
 }
@@ -9,14 +29,6 @@ body {
 .feature-box {
   text-align: center;
   padding: 5%;
-}
-
-h3 {
-  font-family: "Montserrat-Bold";
-}
-
-p {
-  color: #8f8f8f;
 }
 
 .icon {
@@ -33,14 +45,17 @@ p {
   color: #fff;
 }
 
-h1 {
-  font-family: "Montserrat-Black";
-  font-size: 4rem;
-  line-height: 1.5;
-}
-
 .container-fluid {
   padding: 3% 15%;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
 }
 
 .navbar {
@@ -62,13 +77,31 @@ h1 {
   font-family: "Montserrat-Light";
 }
 
-.download-button {
-  margin: 5% 3% 5% 0;
+#test {
+  text-align: center;
+  background-color: #ef8172;
+  color: #fff;
 }
 
-.title-image {
-  width: 60%;
-  transform: rotate(25deg);
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+#press {
+  background-color: #ef8172;
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 10%;
+  margin: 20px 20px 50px;
+}
+
+.carousel-item {
+  padding: 7% 15%;
 }
 
 /*# sourceMappingURL=style.css.map */
