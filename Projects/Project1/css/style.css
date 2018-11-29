@@ -34,16 +34,16 @@ h1 {
 }
 
 .icon {
-  color: #ef8172;
+  color: #E7BB41;
   margin-bottom: 1rem;
 }
 
 .icon:hover {
-  color: #ff4c68;
+  color: #FFCE47;
 }
 
 #title {
-  background-color: #ff4c68;
+  background-color: #44BBA4;
   color: #fff;
 }
 
@@ -78,12 +78,12 @@ h1 {
 
 .nav-link {
   font-size: 1.2rem;
-  font-family: "Montserrat-Light";
+  font-family: "Montserrat";
 }
 
 #test {
   text-align: center;
-  background-color: #ef8172;
+  background-color: #369683;
   color: #fff;
 }
 
@@ -94,7 +94,7 @@ h1 {
 }
 
 #press {
-  background-color: #ef8172;
+  background-color: #369683;
   text-align: center;
   padding-bottom: 3%;
 }
@@ -115,6 +115,36 @@ h1 {
 
 .pricing-column {
   padding: 3% 2%;
+}
+
+#cta {
+  text-align: center;
+  background-color: #369683;
+  color: #fff;
+}
+
+.big-heading {
+  font-size: 4rem;
+  font-family: Montserrat-Bold;
+}
+
+#footer {
+  text-align: center;
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media (max-width: 1028) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
