@@ -24,6 +24,8 @@ h1 {
 
 #features {
   padding: 7% 15%;
+  background-color: #fff;
+  position: relative;
 }
 
 .feature-box {
@@ -46,7 +48,7 @@ h1 {
 }
 
 .container-fluid {
-  padding: 3% 15%;
+  padding: 3% 15% 12%;
 }
 
 .download-button {
@@ -56,6 +58,8 @@ h1 {
 .title-image {
   width: 60%;
   transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
 }
 
 .navbar {
@@ -102,6 +106,15 @@ h1 {
 
 .carousel-item {
   padding: 7% 15%;
+}
+
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+
+.pricing-column {
+  padding: 3% 2%;
 }
 
 /*# sourceMappingURL=style.css.map */
