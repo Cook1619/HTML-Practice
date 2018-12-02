@@ -1,4 +1,5 @@
 let button = document.querySelectorAll('.drum');
+console.log(button);
 for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', function () {
         let buttonHTML = this.innerHTML;
@@ -30,7 +31,10 @@ for (let i = 0; i < button.length; i++) {
             case "l":
                 let audio = new Audio('sounds/snare.mp3');
                 audio.play();
-                break
+                break;
+
+            default:
+                console.log(buttonHTML);
         }
     })
 }
