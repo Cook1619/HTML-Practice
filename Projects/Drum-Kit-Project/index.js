@@ -1,15 +1,16 @@
 let button = document.querySelectorAll('.drum');
-
+//Adds an event listener on all the buttons, and calls the make soundMake function if one of the buttons is clicks
 for (let i = 0; i < button.length; i++) {
     button[i].addEventListener('click', function () {
         let buttonHTML = this.innerHTML;
         makeSound(buttonHTML)
     })
 }
-document.addEventListener("keydown", function () {
+//Keeps track of which key was pressed and will call the makeSound function if its matches one of the cases
+document.addEventListener("keydown", function (event) {
     makeSound(event.key);
 });
-
+//The heavy lifter of the project assigns the proper sound to the proper key and button
 function makeSound(key) {
     switch (key) {
         case "w":
