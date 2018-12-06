@@ -11,7 +11,11 @@ app.get("/", function(req,res){
 })
 
 app.post("/", function(req,res){
-
+    request("https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD", function(error, res, body){
+        let data = JSON.parse(body);
+        let price = data.averages.week;
+        res.send(`The price of bitcoin is ${price}`)
+    })
 })
 
 app.listen(3000, function(){
