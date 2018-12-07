@@ -10,7 +10,7 @@ app.get("/", function(req, res){
   if(today.getDay() === 6 || today.getDay() === 0 ){
     res.send("Its the weekend!")
   }else {
-    res.send("Its a workday!")
+    res.sendFile(__dirname + "/index.html")
   }
 });
 
