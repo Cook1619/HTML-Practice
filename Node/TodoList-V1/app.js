@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+let items = ["Buy Food", "Cook Food", "Eat Food"];
+
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.set("view engine", "ejs");
@@ -18,12 +20,15 @@ app.get("/", function (req, res) {
     month:'long'
   }
   let day = today.toLocaleDateString("en-US", options);
-
-  res.render("list", { kindOfDay: day });
+  //we render out list.ejs which first renders the day, then renders the newListItems
+  res.render("list", { kindOfDay: day, newListItems: items});
 });
 
 app.post("/", function(req,res){
-  console.log(req.body.newItem);
+  //This is the todo we typed into the input, and were saving it to a variable to render in the above app.get
+  let item = req.body.newItem;
+  items.push(item);
+  res.redirect("/");
 })
 
 console.log("test")

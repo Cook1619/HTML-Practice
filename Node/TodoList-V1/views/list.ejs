@@ -22,9 +22,9 @@
     <h1> <%= kindOfDay %> </h1>
 
     <ul>
-        <li>Buy Food</li>
-        <li>Cook Food</li>
-        <li>Eat Food</li>
+        <% for (let i =0; i < newListItems.length; i++){ %>
+            <li><%= newListItems[i] %></li>
+       <% } %>
     </ul>
     <!-- //posts to the homeroute -->
     <form action="/" method="post">
