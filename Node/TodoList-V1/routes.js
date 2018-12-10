@@ -2,6 +2,6 @@ import { Router } from 'express';
 
 let router = Router();
 
-router.use('/users', );
+router.use('/list', );
 
 export default router;
