@@ -6,7 +6,8 @@ const app = express();
 
 let items = ["Buy Food", "Cook Food", "Eat Food"];
 
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
@@ -27,6 +28,7 @@ app.get("/", function (req, res) {
 app.post("/", function(req,res){
   //This is the todo we typed into the input, and were saving it to a variable to render in the above app.get
   let item = req.body.newItem;
+  //Then push the value of the captured value item to the items array, then re-direct to the initial get route
   items.push(item);
   res.redirect("/");
 })

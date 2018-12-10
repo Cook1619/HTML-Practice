@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Todo List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
 
 <body>
     <!-- <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
@@ -19,18 +20,28 @@
         Todo List
     </h1>
     <% } %> -->
-    <h1> <%= kindOfDay %> </h1>
+    <div class="box" id="heading">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
 
-    <ul>
+    <div class="box">
         <% for (let i =0; i < newListItems.length; i++){ %>
-            <li><%= newListItems[i] %></li>
-       <% } %>
-    </ul>
-    <!-- //posts to the homeroute -->
-    <form action="/" method="post">
-        <input type="text" name="newItem" placeholder="Add Todo">
-        <button type="submit">Add Todo</button>
-    </form>
+        <div class="item">
+            <input type="checkbox">
+            <p>
+                <%= newListItems[i] %>
+            </p>
+        </div>
+        <% } %>
+        <!-- //posts to the homeroute -->
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="Add Todo" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
+
 </body>
 
 </html>
