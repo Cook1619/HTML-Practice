@@ -9,20 +9,9 @@
     <link rel="stylesheet" href="../css/styles.css">
 
 <body>
-    <!-- <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
-    <h1 style="color: red">It's a
-        <%= kindOfDay %>
-        Todo List
-    </h1>
-    <% }else { %>
-    <h1 style="color: purple">It's a
-        <%= kindOfDay %>
-        Todo List
-    </h1>
-    <% } %> -->
     <div class="box" id="heading">
         <h1>
-            <%= kindOfDay %>
+            <%= listTitle %>
         </h1>
     </div>
 
@@ -38,7 +27,7 @@
         <!-- //posts to the homeroute -->
         <form class="item" action="/" method="post">
             <input type="text" name="newItem" placeholder="Add Todo" autocomplete="off">
-            <button type="submit">+</button>
+            <button type="submit" name="list" value= <%= listTitle %> >+</button>
         </form>
     </div>
 
