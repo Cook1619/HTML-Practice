@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>
-    <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
+    <!-- <% if(kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
     <h1 style="color: red">It's a
         <%= kindOfDay %>
         Todo List
@@ -18,9 +18,19 @@
         <%= kindOfDay %>
         Todo List
     </h1>
-    <% } %>
+    <% } %> -->
+    <h1> <%= kindOfDay %> </h1>
 
-
+    <ul>
+        <li>Buy Food</li>
+        <li>Cook Food</li>
+        <li>Eat Food</li>
+    </ul>
+    <!-- //posts to the homeroute -->
+    <form action="/" method="post">
+        <input type="text" name="newItem" placeholder="Add Todo">
+        <button type="submit">Add Todo</button>
+    </form>
 </body>
 
 </html>
