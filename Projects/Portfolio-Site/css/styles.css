@@ -24,9 +24,10 @@
   }
   .bg{
     background-image:url(../img/matt-cook.jpg);
-    height:100%;
+    min-height:300px;
+    height: 100%;
     width:100%;
-    background-position: center;
+    background-position: top 30%;
     background-repeat: no-repeat;
     background-size: cover;
   }
