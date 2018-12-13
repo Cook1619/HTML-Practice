@@ -31,3 +31,14 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .description {
+    display: none;
+  }
+  .portfolio-card {
+    height: 200px;
+    width: 200px;
+  }
+  .portfolio-card:hover .description {
+    display: block;
+  }
