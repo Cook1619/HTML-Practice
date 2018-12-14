@@ -22,11 +22,18 @@ app.get("/", function(req,res){
 app.get("/about", function(req,res){
   res.render("about", {aboutPageText: aboutContent});
 });
+
 app.get("/contact", function(req,res){
   res.render("contact", {contactPageText: contactContent});
 })
 
+app.get("/compose", function(req,res){
+  res.render("compose");
+})
 
+app.post("/compose", function(req,res){
+  console.log(req.body.message);
+})
 
 
 
