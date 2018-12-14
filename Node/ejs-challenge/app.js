@@ -13,13 +13,15 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 
 app.set('view engine', 'ejs');
-
+//ensures we can get information from the webpage
 app.use(bodyParser.urlencoded({ extended: true }));
+//serves up the static files in the public directory
 app.use(express.static("public"));
-
+//Global scope array
 let posts = [];
 
 app.get("/", function (req, res) {
+  //renders the home page and the content like the about and contact page, but will also host the posts which will get from being redirected from the app.post("/compose") route
   res.render("home", {
     homePageText: homeStartingContent,
     posts: posts
@@ -31,29 +33,36 @@ app.get("/about", function (req, res) {
 });
 
 app.get("/contact", function (req, res) {
+  //renders the contact page, and passes the contactContent variable to the contactPageText variable in the contact page which is displayed as the string above
   res.render("contact", { contactPageText: contactContent });
 })
 
 app.get("/compose", function (req, res) {
+  //renders the compose page
   res.render("compose");
 })
 
 app.post("/compose", function (req, res) {
+  //saves this information to an object
   const post = {
     title: req.body.postTitle,
     body: req.body.postBody
   };
+  //puts the information to the posts array, each an an object
   posts.push(post);
+  //redirects to the home route to eventually show you the post
   res.redirect("/");
 })
 
 app.get("/posts/:post", function(req,res){
+  //saves the value of req.params.post to th requestedTitle variable
   const requestedTitle = req.params.post;
 
   posts.forEach(function(post){
     const storedTitle = post.title;
-
+    //this checks if the title is each to the route parameter title, lodash checks the need to check for spacing and upper and lower case situations
     if(_.lowerCase(storedTitle) === _.lowerCase(requestedTitle)){
+      //Like any if the condition is true it going to pass information to the post page and pass in post.title to title and post.body to the content variable in tbe post page
       res.render("post",{title:post.title, content:post.body});
     }
   })
