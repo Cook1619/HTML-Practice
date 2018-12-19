@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js")
-const ejs = require("ejs");
+// const ejs = require("ejs");
 const app = express();
 
 const items = ["Buy Food", "Cook Food", "Eat Food"];
