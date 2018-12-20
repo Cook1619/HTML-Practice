@@ -60,14 +60,29 @@ const fruit = new Fruit ({
 
 const personSchema =  new mongoose.Schema ({
     name: String,
-    age: Number
+    age: Number,
+    favoriteFruit: fruitSchema
 });
+
+const pineapple = new Fruit({
+    name: "Pineapple",
+    score: 10,
+    review: "Great Fruit!!!"
+})
+
+const pear =  new Fruit({
+    name: "Pear",
+    rating: 9,
+    review: "Pears are awesome"
+})
+pear.save();
 
 const Person = mongoose.model("Person", personSchema);
 
 const person = new Person({
     name: "Matt",
-    age: 31
+    age: 12,
+    favoriteFruit: pineapple
 })
 //Add person in everytime program in ran
 // person.save();
@@ -94,6 +109,13 @@ Fruit.find(function(err,fruits){
     }
 })
 
+Person.updateOne({name: "Matt"}, {favoriteFruit: pear}, function(err){
+    if(err){
+        console.log(err);
+    }else{
+        console.log("Fav fruit added");
+    }
+})
 // Fruit.updateOne({_id:"5c1a9bf634b87315e8d8c153"}, {name:"Super Blueberry"}, function(err){
 //     if(err){
 //         console.log(err);
@@ -110,10 +132,10 @@ Fruit.find(function(err,fruits){
 //     }
 // });
 
-Person.deleteMany({name: 'Matt'}, function(err){
-    if(err){
-        console.log(err);
-    }else {
-        console.log("Succesfully deleted Person data");
-    }
-});
+// Person.deleteMany({name: 'Matt'}, function(err){
+//     if(err){
+//         console.log(err);
+//     }else {
+//         console.log("Succesfully deleted Person data");
+//     }
+// });
