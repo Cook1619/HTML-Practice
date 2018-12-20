@@ -24,7 +24,7 @@ const fruit = new Fruit ({
     rating: 10,
     review: "This is a review"
 })
-fruit.save();
+// fruit.save();
 // const fruit = new Fruit ({
 //     name: "Apple",
 //     rating: 8,
@@ -93,3 +93,27 @@ Fruit.find(function(err,fruits){
         });
     }
 })
+
+// Fruit.updateOne({_id:"5c1a9bf634b87315e8d8c153"}, {name:"Super Blueberry"}, function(err){
+//     if(err){
+//         console.log(err);
+//     }else {
+//         console.log("Succesfully updated document!");
+//     }
+// })
+
+// Fruit.deleteOne({name: "Peach"}, function(err){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("Succesfully deleted item");
+//     }
+// });
+
+Person.deleteMany({name: 'Matt'}, function(err){
+    if(err){
+        console.log(err);
+    }else {
+        console.log("Succesfully deleted Person data");
+    }
+});
