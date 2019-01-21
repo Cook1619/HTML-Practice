@@ -53,18 +53,19 @@ app.post("/", function(req, res){
     res.redirect("/work");
   } else {
     items.push(item);
+    //pushes onto array and redirects
     res.redirect("/");
   }
 });
-
+//work route
 app.get("/work", function(req,res){
   res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
-
+//about route
 app.get("/about", function(req, res){
   res.render("about");
 });
-
+//starts web server
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
